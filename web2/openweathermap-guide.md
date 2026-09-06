@@ -38,7 +38,7 @@ curl "https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KE
 const apiKey = "YOUR_API_KEY";
 const city = "London";
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=\( {city}&appid= \){apiKey}&units=metric`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=\( {city}&appid= \){apiKey}&units=metric`))
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error("Error:", error));
