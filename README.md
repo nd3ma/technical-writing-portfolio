@@ -11,7 +11,7 @@ I create clear, developer-friendly docs including:
 ## Portfolio Samples
 
 ### Web2
-- Coming soon
+- [How to Get Current Weather Data Using the OpenWeatherMap API](./web2/openweathermap-guide.md)
 
 ### Web3
 - Coming soon
