@@ -43,6 +43,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=\( {city}&appid= \){api
   .then(data => console.log(data))
   .catch(error => console.error("Error:", error));
 
+
 ## Step 3: Understand the Response
 
 A successful response returns a JSON object. Here are the most useful fields:
