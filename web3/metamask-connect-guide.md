@@ -16,15 +16,16 @@ This guide shows you how to connect a user's MetaMask wallet to a website using 
 
 First, check whether the user has MetaMask installed.
 
-```js
 if (typeof window.ethereum !== "undefined") {
   console.log("MetaMask is installed!");
 } else {
   console.log("Please install MetaMask");
 }
 
-Step 2: Request Wallet Connection
+## Step 2: Request Wallet Connection
+
 Ask the user to connect their wallet using the following code:
+
 async function connectWallet() {
   try {
     const accounts = await window.ethereum.request({ 
@@ -40,14 +41,19 @@ async function connectWallet() {
   }
 }
 
-Step 3: Display the Wallet Address
+## Step 3: Display the Wallet Address
+
 Once connected, you can show the wallet address on your website.
+
 Example:
+
 const address = await connectWallet();
 document.getElementById("wallet-address").innerText = address;
 
-Step 4: Listen for Account Changes
+## Step 4: Listen for Account Changes
+
 Users can switch accounts in MetaMask. You should listen for this event:
+
 window.ethereum.on("accountsChanged", (accounts) => {
   if (accounts.length > 0) {
     console.log("Switched to:", accounts[0]);
@@ -56,12 +62,12 @@ window.ethereum.on("accountsChanged", (accounts) => {
   }
 });
 
+## Full Example
 
-Full Example
-<button onclick="connectWallet()">Connect Wallet</button>
-<p id="wallet-address"></p>
+button onclick="connectWallet()">Connect Wallet</button>
+p id="wallet-address"></p>
 
-<script>
+script
   async function connectWallet() {
     if (typeof window.ethereum === "undefined") {
       alert("Please install MetaMask");
@@ -78,13 +84,16 @@ Full Example
       console.error(error);
     }
   }
-</script>
+/script
 
-Common Errors
-User rejects the connection request
-MetaMask is not installed
-Website is not running on HTTPS (required in production)
-Next Steps
-Detect the current network (Ethereum, Polygon, etc.)
-Add support for switching networks
-Sign a message for authentication
+## Common Errors
+
+- User rejects the connection request
+- MetaMask is not installed
+- Website is not running on HTTPS (required in production)
+
+## Next Steps
+
+- Detect the current network (Ethereum, Polygon, etc.)
+- Add support for switching networks
+- Sign a message for authentication
